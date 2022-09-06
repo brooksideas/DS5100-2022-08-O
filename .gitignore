@@ -1,4 +1,3 @@
-
 # SYSTEM
 .Rhistory
 .Rproj.user
@@ -22,9 +21,10 @@ repo.Rproj
 **/cookiecutter.png 
 
 lessons/00_TO_ADD
-lessons/M02*
-lessons/M03*
+!lessons/M02
+!lessons/M03
 lessons/M04*
+lessons/M05*
 lessons/M06*
 lessons/M07*
 lessons/M08*
@@ -36,7 +36,3 @@ lessons/M13*
 lessons/M14*
 lessons/M15*
 lessons/M16*
-lessons/M14_PythonModules/demo_package3/funniest.egg-info/top_level.txt
-lessons/M14_PythonModules/demo_package3/funniest.egg-info/SOURCES.txt
-lessons/M14_PythonModules/demo_package3/funniest.egg-info/PKG-INFO
-lessons/M14_PythonModules/demo_package3/funniest.egg-info/dependency_links.txt
