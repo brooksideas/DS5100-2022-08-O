@@ -7,6 +7,6 @@ class Student:
         self.num_courses = len(self.courses)
         
     # enroll in a course
-    def enrollInCourse(self, cname): 
-        self.courses.append(cname)
+    def enroll_in_course(self, course_name): 
+        self.courses.append(course_name)
         self.num_courses += 1 # increment the number of courses

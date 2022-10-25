@@ -1,4 +1,5 @@
-test_is_numCoursincremented_correctly (__main__.EnrollInTestCase) ... ok
+test_incremented_correctly (__main__.EnrollInCourseTest)
+Test if enroll_in_course() method successfully increments the ... ok
 
 ----------------------------------------------------------------------
 Ran 1 test in 0.000s
