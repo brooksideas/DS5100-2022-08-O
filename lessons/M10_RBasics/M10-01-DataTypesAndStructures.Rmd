@@ -274,8 +274,8 @@ Basic R comes with several data structures:
 -   List
 -   Data frame
 
-A **vector** is what is called an array in all other programming
-languages except R
+A **vector** is what is called an array in many other programming
+languages
 
 > A collection of cells with **a fixed size** where all cells hold the
 > **same data type** (integers or characters or reals or whatever).
@@ -295,7 +295,7 @@ increased on the fly.
 > List contents can be accessed either by **index** (like `mylist[[1]]`)
 > or by **name** (like `mylist$age`).
 
-A **data frame** is called a *table* in most languages.
+A **data frame** is called a *table* in many languages.
 
 > Each column holds the same type, and the columns can have header
 > names.\
@@ -624,7 +624,11 @@ In other words, **`x[[2]]` is a copy of `s`, but is not a slice
 containing `s` or its copy**.
 
 ```{r}
-x[[2]] 
+x[2]
+```
+
+```{r}
+x[[2]]
 ```
 
 We can modify its content directly.
@@ -760,13 +764,16 @@ square bracket "[]" operator. We prepend the column name with a comma
 character, which signals a wildcard match for the row position
 
 ```{r}
-mtcars[,"am"] 
+mtcars[, "am"] 
 ```
 
 ### Data Frame Column Slice
 
-We retrieve a data frame column slice with the single square bracket
+We retrieve a data frame column **slice** with the single square bracket
 `[ ]` operator.
+
+Note: This is like a one-column dataframe in Pandas, as opposed to a
+Series.
 
 #### Numeric Indexing
 
@@ -910,12 +917,10 @@ The cells inside the table are separated by blank characters.
 
 Here is an example of a table with 4 rows and 3 columns.
 
-``` {style="color: gray;"}
-100 a1 b1 
-200 a2 b2 
-300 a3 b3 
-400 a4 b4
-```
+    100 a1 b1 
+    200 a2 b2 
+    300 a3 b3 
+    400 a4 b4
 
 Now copy and paste the table above in a file named "mydata.txt" with a
 text editor.
@@ -973,14 +978,14 @@ You can select a different working directory with the function setwd(),
 and thus avoid entering the full path of the data files
 
 ```{r}
-setwd("<new path>")   # set working directory
+# setwd("<new path>")   # set working directory
 ```
 
 Note that the forward slash should be used as the path separator even on
 Windows platform
 
 ```{r}
-setwd("C:/MyDoc")
+# setwd("C:/MyDoc")
 ```
 
 # Extra
@@ -1003,9 +1008,7 @@ plot(airquality)
 ```
 
 ```{r}
-
 plot(airquality[, c("Temp", "Wind")])
-
 ```
 
 ```{r}
@@ -1025,12 +1028,12 @@ Here we get a table of values and their counts for `airquality$Temp`,
 convert this into a data frame, and then plot the results.
 
 ```{r}
-temps = table(airquality$Temp)
+temps <- table(airquality$Temp)
 temps
 ```
 
 ```{r}
-temps.df = data.frame(temps)
+temps.df <- data.frame(temps)
 temps.df
 ```
 

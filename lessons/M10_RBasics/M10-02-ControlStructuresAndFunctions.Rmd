@@ -42,25 +42,28 @@ Here's their syntax in R.
 Generate a uniform random number:
 
 ```{r}
-x <- runif(1, 0, 10) # The Uniform Distribution
+x <- runif(1, 0, 10) # From the Uniform Distribution
 
 if(x > 3) {
   y <- 10
 } else {
   y <- 0
 }
+
+x
+y
 ```
 
 You assign an `if` statement to a variable.
 
 ```{r}
-y <- if(x > 3) {
+z <- if(x > 3) {
   10
 } else { 
   0
 }
 
-y
+z
 ```
 
 You can stack `if` blocks, too.
@@ -89,15 +92,15 @@ for(i in 1:10) {
 }
 ```
 
-According to HW, loops are pretty much the only looping construct that
-you will need in R.
+According to Hadley Wickham, loops are pretty much the only looping
+construct that you will need in R.
 
 The following three loops all have the same behavior.
 
 ```{r}
 x <- c("a", "b", "c", "d")
-for(i in 1:4) {
-  ## Print out each element of 'x'
+for (i in 1:4) {
+  # Print out each element of 'x'
   print(x[i])  
 }
 ```
@@ -112,8 +115,9 @@ object (in this case, the object x).
 x
 ```
 
+Generate a sequence based on length of 'x':
+
 ```{r}
-## Generate a sequence based on length of 'x'
 for(i in seq_along(x)) {   
   print(x[i])
 }
@@ -192,21 +196,21 @@ repeat {
 next is used to skip an iteration of a loop. Same as Python `continue`.
 
 ```{r}
-for(i in 1:100) {
-  if(i <= 20) {
-    ## Skip the first 20 iterations
-    next                 
-  }      ## Do something here
+for (i in 1:100) {
+  if (i <= 20) {
+    # Skip the first 20 iterations
+    next                
+  }      # Do something here
 }
 ```
 
 `break` is used to exit a loop immediately.
 
 ```{r}
-for(i in 1:100) {
+for (i in 1:100) {
   print(i)
-  if(i > 20) {
-    ## Stop loop after 20 iterations
+  if (i > 20) {
+    # Stop loop after 20 iterations
     break  
   }     
 }
@@ -268,9 +272,11 @@ Call to test some cases:
 ```{r}
 is_odd(4)
 is_odd(3)
+```
 
 Function arguments can use default values:
 
+```{r}
 threshold_vals <- function(p, thresh = 0.5) {
   # for each element in p, returns TRUE if value > thresh, else FALSE
   p > thresh
@@ -326,7 +332,7 @@ test_fcn(2)
 
 If `z` isn't defined in the function, how does this work?
 
-R's scoping rules are different than Python's.
+R's scoping rules are similar to Python's.
 
 Since `z` isn't in the function, **R looks in the function's
 environment** for it.
